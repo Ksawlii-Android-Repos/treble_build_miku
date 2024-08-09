@@ -1,4 +1,4 @@
-From 486a836509ff6615cf7939c1fbb8018cfe2088df Mon Sep 17 00:00:00 2001
+From d7035da3a6c21e7b4d5226a90eb8101fbfe63483 Mon Sep 17 00:00:00 2001
 From: "Re*Index. (ot_inc)" <32851879+reindex-ot@users.noreply.github.com>
 Date: Thu, 25 May 2023 21:21:15 +0900
 Subject: [PATCH 3/4] res: Add support for Japanese (#1)
@@ -468,5 +468,5 @@ index 0000000..7f65a7d
 +  <string name="samsung_backlight_multiplier">バックライトスケール、レベルの最大値を設定する</string>
 +</resources>
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 
