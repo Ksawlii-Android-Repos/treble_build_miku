@@ -1,7 +1,7 @@
-From 4b1eba53f5272d2f2fb63d8bc1164f7b37f6716f Mon Sep 17 00:00:00 2001
+From 1b8a1e42cf53e78121153f5785fef5fc5eee6a9e Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 26 Oct 2022 18:10:04 -0400
-Subject: [PATCH 1/5] Allow failing to load bpf programs, for BPF-less devices
+Subject: [PATCH 1/6] Allow failing to load bpf programs, for BPF-less devices
 
 Change-Id: I68ba3be2e15c188e56e32a6ecf844e1ca64d560f
 ---
@@ -30,5 +30,5 @@ index 2252e07fc9..b8333526d8 100644
      // For the devices that support cgroup socket filter, the socket filter
      // should be loaded successfully by bpfloader. So we attach the filter to
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

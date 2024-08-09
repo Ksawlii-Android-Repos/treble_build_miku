@@ -1,7 +1,7 @@
-From 173a431451619b05bb438a5235aa0a9bedc428d0 Mon Sep 17 00:00:00 2001
+From 6885b957d6d5fc0b400b23e52f7d90c2572430ea Mon Sep 17 00:00:00 2001
 From: Peter Cai <peter@typeblog.net>
 Date: Sat, 16 Mar 2024 15:27:27 -0400
-Subject: [PATCH 4/5] Revert "drop support for V gsi on pixel 5 R base kernel"
+Subject: [PATCH 4/6] Revert "drop support for V gsi on pixel 5 R base kernel"
 
 This reverts commit bbbd18a71368a80f689b924dcf82062c2ee351b2.
 ---
@@ -40,5 +40,5 @@ index c125bd6479..787ef8fd69 100644
  }
  
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

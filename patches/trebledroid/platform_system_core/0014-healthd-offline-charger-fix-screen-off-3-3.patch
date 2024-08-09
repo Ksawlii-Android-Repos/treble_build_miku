@@ -1,4 +1,4 @@
-From 51ab6a6ec08689f7a7ac16b9049d7db445a5fe81 Mon Sep 17 00:00:00 2001
+From 6a60ce523b268405f520e80e520075b7d86fcb99 Mon Sep 17 00:00:00 2001
 From: Raphael Mounier <mounierr07@gmail.com>
 Date: Sun, 21 May 2023 16:15:42 +0200
 Subject: [PATCH 14/26] healthd : offline charger fix screen off 3/3
@@ -225,5 +225,5 @@ index c463b92aa..50267ffee 100644
      void InitHealthdDraw();
      void InitAnimation();
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

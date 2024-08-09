@@ -1,4 +1,4 @@
-From 079e03a4648e358cfbc22b29bc9d7f410027e8bf Mon Sep 17 00:00:00 2001
+From b8d23fa344f5b5013701bcfe578ededab86d4358 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 25 Nov 2023 09:51:14 -0500
 Subject: [PATCH 22/26] Keep our own version of ro.logd.kernel. We do want
@@ -9,7 +9,7 @@ Subject: [PATCH 22/26] Keep our own version of ro.logd.kernel. We do want
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/init/property_service.cpp b/init/property_service.cpp
-index 6f8034aae..a1bfbbdcd 100644
+index 7fd6e6e75..8fe879e9a 100644
 --- a/init/property_service.cpp
 +++ b/init/property_service.cpp
 @@ -816,7 +816,7 @@ static void LoadProperties(char* data, const char* filter, const char* filename,
@@ -22,5 +22,5 @@ index 6f8034aae..a1bfbbdcd 100644
                      } else {
                          it->second = value;
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

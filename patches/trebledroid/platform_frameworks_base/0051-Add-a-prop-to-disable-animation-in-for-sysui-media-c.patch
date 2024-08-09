@@ -1,26 +1,26 @@
-From b1d3c62ddb2a84a585e65ae46fc1444709910ea3 Mon Sep 17 00:00:00 2001
+From 4510c60840fe453d2df14e6a7d1c23efef6f3160 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 8 May 2024 11:55:07 -0400
-Subject: [PATCH 51/51] Add a prop to disable animation in for sysui media
+Subject: [PATCH 51/52] Add a prop to disable animation in for sysui media
  carousel
 
 ---
- .../systemui/media/controls/ui/MediaCarouselController.kt      | 3 ++-
+ .../media/controls/ui/controller/MediaCarouselController.kt    | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/packages/SystemUI/src/com/android/systemui/media/controls/ui/MediaCarouselController.kt b/packages/SystemUI/src/com/android/systemui/media/controls/ui/MediaCarouselController.kt
-index 992eeca77e54..f8fed58d2553 100644
---- a/packages/SystemUI/src/com/android/systemui/media/controls/ui/MediaCarouselController.kt
-+++ b/packages/SystemUI/src/com/android/systemui/media/controls/ui/MediaCarouselController.kt
+diff --git a/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt b/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
+index b721236eab01..8da1ddc2010f 100644
+--- a/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
++++ b/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
 @@ -22,6 +22,7 @@ import android.content.Intent
  import android.content.res.ColorStateList
  import android.content.res.Configuration
  import android.database.ContentObserver
-+import android.os.SystemProperties;
++import android.os.SystemProperties
  import android.provider.Settings
  import android.provider.Settings.ACTION_MEDIA_CONTROLS_SETTINGS
  import android.util.Log
-@@ -1047,7 +1048,7 @@ constructor(
+@@ -1050,7 +1051,7 @@ constructor(
                          desiredHostState.showsOnlyActiveMedia
  
                  for (mediaPlayer in MediaPlayerData.players()) {
@@ -30,5 +30,5 @@ index 992eeca77e54..f8fed58d2553 100644
                              duration = duration,
                              delay = startDelay
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

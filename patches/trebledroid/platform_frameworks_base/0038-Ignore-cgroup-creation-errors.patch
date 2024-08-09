@@ -1,7 +1,7 @@
-From e78ea44a23cb8be627176b1057bb2b85f038991b Mon Sep 17 00:00:00 2001
+From b33886c60d4b5d2623bc43dd43185cf6f0663816 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 18 Oct 2023 16:53:40 -0400
-Subject: [PATCH 38/51] Ignore cgroup creation errors
+Subject: [PATCH 38/52] Ignore cgroup creation errors
 
 For old kernels who don't have those modern cgroups
 ---
@@ -10,11 +10,11 @@ For old kernels who don't have those modern cgroups
  2 files changed, 2 insertions(+), 5 deletions(-)
 
 diff --git a/core/jni/com_android_internal_os_Zygote.cpp b/core/jni/com_android_internal_os_Zygote.cpp
-index 7c5885adb220..c2f45e3727bb 100644
+index 3ed9f49ede26..90c6e6d145c0 100644
 --- a/core/jni/com_android_internal_os_Zygote.cpp
 +++ b/core/jni/com_android_internal_os_Zygote.cpp
-@@ -1943,10 +1943,12 @@ static void SpecializeCommon(JNIEnv* env, uid_t uid, gid_t gid, jintArray gids,
-     if (!is_system_server && getuid() == 0) {
+@@ -1968,10 +1968,12 @@ static void SpecializeCommon(JNIEnv* env, uid_t uid, gid_t gid, jintArray gids,
+     if (getuid() == 0) {
          const int rc = createProcessGroup(uid, getpid());
          if (rc != 0) {
 +#if 0
@@ -27,10 +27,10 @@ index 7c5885adb220..c2f45e3727bb 100644
      }
  
 diff --git a/services/core/java/com/android/server/am/ProcessList.java b/services/core/java/com/android/server/am/ProcessList.java
-index a317a6bda3f6..e50cdc14ab96 100644
+index 8c8120a0a38d..06839148d7c5 100644
 --- a/services/core/java/com/android/server/am/ProcessList.java
 +++ b/services/core/java/com/android/server/am/ProcessList.java
-@@ -2521,14 +2521,9 @@ public final class ProcessList {
+@@ -2518,14 +2518,9 @@ public final class ProcessList {
                          // If we're not told to skip the process group creation, go create it.
                          final int res = Process.createProcessGroup(uid, startResult.pid);
                          if (res < 0) {
@@ -46,5 +46,5 @@ index a317a6bda3f6..e50cdc14ab96 100644
                              app.mProcessGroupCreated = true;
                          }
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

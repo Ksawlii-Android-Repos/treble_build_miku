@@ -1,4 +1,4 @@
-From ee67d255cb31b85f8ce8c2bc372b9bd30fa01699 Mon Sep 17 00:00:00 2001
+From be659bc0776355c819691de07506c4cb19602caa Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Thu, 10 Nov 2022 13:30:50 -0500
 Subject: [PATCH 10/26] FDE is dead. Fallback FDE to no encryption, and FDE+FBE
@@ -9,7 +9,7 @@ Subject: [PATCH 10/26] FDE is dead. Fallback FDE to no encryption, and FDE+FBE
  1 file changed, 3 insertions(+), 4 deletions(-)
 
 diff --git a/fs_mgr/libfstab/fstab.cpp b/fs_mgr/libfstab/fstab.cpp
-index ea2137fdc..f58584501 100644
+index 0603f25b0..453010e4e 100644
 --- a/fs_mgr/libfstab/fstab.cpp
 +++ b/fs_mgr/libfstab/fstab.cpp
 @@ -187,7 +187,7 @@ bool ParseFsMgrFlags(const std::string& flags, FstabEntry* entry) {
@@ -34,5 +34,5 @@ index ea2137fdc..f58584501 100644
              // The voldmanaged flag is followed by an = and the label, a colon and the partition
              // number or the word "auto", e.g. voldmanaged=sdcard:3
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

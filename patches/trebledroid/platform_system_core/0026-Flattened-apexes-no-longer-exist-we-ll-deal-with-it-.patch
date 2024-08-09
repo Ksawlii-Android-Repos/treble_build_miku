@@ -1,4 +1,4 @@
-From 9cb257b691479a720e241366d7cc9e83019383dc Mon Sep 17 00:00:00 2001
+From e4a43fb6258f7cdf57acdc62c4c7685f2eaa5db4 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 2 Apr 2024 16:53:08 -0400
 Subject: [PATCH 26/26] Flattened apexes no longer exist, we'll deal with it
@@ -9,7 +9,7 @@ Subject: [PATCH 26/26] Flattened apexes no longer exist, we'll deal with it
  1 file changed, 1 insertion(+), 21 deletions(-)
 
 diff --git a/init/property_service.cpp b/init/property_service.cpp
-index 3cfed38af..396a273f8 100644
+index b1bee0f1c..3aa028ffd 100644
 --- a/init/property_service.cpp
 +++ b/init/property_service.cpp
 @@ -707,26 +707,6 @@ uint32_t InitPropertySet(const std::string& name, const std::string& value) {
@@ -49,5 +49,5 @@ index 3cfed38af..396a273f8 100644
                  if (it == properties->end()) {
                      (*properties)[key] = new_value;
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

@@ -1,7 +1,7 @@
-From 3cf1a5f8649e1e4bb1e4765ebb3431cfc40a7f03 Mon Sep 17 00:00:00 2001
+From cc9b57bf01393f43821fc2f809cd449d83e9ca1c Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 17 Jun 2023 08:31:55 -0400
-Subject: [PATCH 31/51] Add Mediatek power hints on touch
+Subject: [PATCH 31/52] Add Mediatek power hints on touch
 
 Mediatek has multiple HALs (which existed concurrently), so it is a bit
 of a mess.
@@ -27,13 +27,13 @@ Change-Id: I9f1eac5a20b98920a5d0c8204fe4d165ba069f5a
  2 files changed, 52 insertions(+), 1 deletion(-)
 
 diff --git a/services/core/Android.bp b/services/core/Android.bp
-index 575da5d97d0c..0d202cad8502 100644
+index 1934f8196639..eb2520546e8f 100644
 --- a/services/core/Android.bp
 +++ b/services/core/Android.bp
-@@ -204,7 +204,9 @@ java_library_static {
-         "com_android_wm_shell_flags_lib",
-         "com.android.server.utils_aconfig-java",
-         "service-jobscheduler-deviceidle.flags-aconfig-java",
+@@ -255,7 +255,9 @@ java_library_static {
+         "net_flags_lib",
+         "stats_flags_lib",
+         "core_os_flags_lib",
 -        "vendor.samsung.hardware.sysinput-V1.2-java", // HIDL
 +        // HIDL
 +        "vendor.mediatek.hardware.mtkpower-V1.1-java",
@@ -42,10 +42,10 @@ index 575da5d97d0c..0d202cad8502 100644
      javac_shard_size: 50,
      javacflags: [
 diff --git a/services/core/java/com/android/server/wm/DisplayPolicy.java b/services/core/java/com/android/server/wm/DisplayPolicy.java
-index 22574a36fe0f..7af9eaa1fe98 100644
+index 3b35722157ee..3ac815ccc4b1 100644
 --- a/services/core/java/com/android/server/wm/DisplayPolicy.java
 +++ b/services/core/java/com/android/server/wm/DisplayPolicy.java
-@@ -234,6 +234,9 @@ public class DisplayPolicy {
+@@ -235,6 +235,9 @@ public class DisplayPolicy {
       */
      private boolean mRemoteInsetsControllerControlsSystemBars;
  
@@ -55,7 +55,7 @@ index 22574a36fe0f..7af9eaa1fe98 100644
      StatusBarManagerInternal getStatusBarManagerInternal() {
          synchronized (mServiceAcquireLock) {
              if (mStatusBarManagerInternal == null) {
-@@ -475,6 +478,19 @@ public class DisplayPolicy {
+@@ -476,6 +479,19 @@ public class DisplayPolicy {
              mScreenOnEarly = true;
              mScreenOnFully = true;
          }
@@ -75,7 +75,7 @@ index 22574a36fe0f..7af9eaa1fe98 100644
  
          if (mPerf != null) {
              SCROLL_BOOST_SS_ENABLE = Boolean.parseBoolean(mPerf.perfGetProp("vendor.perf.gestureflingboost.enable", "false"));
-@@ -565,6 +581,17 @@ public class DisplayPolicy {
+@@ -566,6 +582,17 @@ public class DisplayPolicy {
                          mService.mPowerManagerInternal.setPowerBoost(
                                  Boost.INTERACTION, duration);
                      }
@@ -93,7 +93,7 @@ index 22574a36fe0f..7af9eaa1fe98 100644
                  }
  
                  @Override
-@@ -583,6 +610,28 @@ public class DisplayPolicy {
+@@ -584,6 +611,28 @@ public class DisplayPolicy {
                      if (listener != null) {
                          listener.onTouchStart();
                      }
@@ -123,5 +123,5 @@ index 22574a36fe0f..7af9eaa1fe98 100644
  
                      @Override
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

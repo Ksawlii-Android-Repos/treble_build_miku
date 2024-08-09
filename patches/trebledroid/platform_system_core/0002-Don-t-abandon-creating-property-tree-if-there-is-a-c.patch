@@ -1,4 +1,4 @@
-From b2353f82ed51f264aee8dcfdee304c4058ad4f21 Mon Sep 17 00:00:00 2001
+From c3e52d203acff822571031218f797be46e867830 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 18 Oct 2020 18:14:47 +0200
 Subject: [PATCH 02/26] Don't abandon creating property tree if there is a
@@ -31,5 +31,5 @@ index 803657ab8..ecdd0be20 100644
    }
  
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

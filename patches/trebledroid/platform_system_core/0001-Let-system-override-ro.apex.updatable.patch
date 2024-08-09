@@ -1,4 +1,4 @@
-From 83c56c492e7d2ec35f19d8579dadd57ac1b3eae7 Mon Sep 17 00:00:00 2001
+From 3dcbd2765f5e56dba45c33f051d3382a41e6dbe0 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 23 Feb 2022 17:37:47 -0500
 Subject: [PATCH 01/26] Let system override ro.apex.updatable
@@ -13,10 +13,10 @@ So, ignore the override policy for this prop
  1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/init/property_service.cpp b/init/property_service.cpp
-index 5bb6fbe22..c0d58f9d5 100644
+index 97c618895..2e1a3f3d0 100644
 --- a/init/property_service.cpp
 +++ b/init/property_service.cpp
-@@ -802,8 +802,12 @@ static void LoadProperties(char* data, const char* filter, const char* filename,
+@@ -803,8 +803,12 @@ static void LoadProperties(char* data, const char* filter, const char* filename,
                  } else if (it->second != value) {
                      LOG(WARNING) << "Overriding previous property '" << key << "':'" << it->second
                                   << "' with new value '" << value << "'";
@@ -32,5 +32,5 @@ index 5bb6fbe22..c0d58f9d5 100644
                  LOG(ERROR) << "Do not have permissions to set '" << key << "' to '" << value
                             << "' in property file '" << filename << "': " << error;
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

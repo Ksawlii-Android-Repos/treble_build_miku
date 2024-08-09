@@ -1,4 +1,4 @@
-From 5f722dcbd3e383b6eeb37b660f7cbc45c2fa3c92 Mon Sep 17 00:00:00 2001
+From b599dce3f3bce7dedbc4b02824badadf596b715f Mon Sep 17 00:00:00 2001
 From: Huy Hoang <38396158+boydaihungst@users.noreply.github.com>
 Date: Thu, 19 Oct 2023 07:06:55 +0700
 Subject: [PATCH 20/26] fix: Nubia 6 series custom rc action prop validation
@@ -20,5 +20,5 @@ index 49fe24a43..f683790e9 100644
  
      for (const auto& prefix : kPartnerPrefixes) {
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

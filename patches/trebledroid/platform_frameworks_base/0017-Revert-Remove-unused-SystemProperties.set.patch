@@ -1,7 +1,7 @@
-From 43437dc03865896c6fb9deee10a3a21be1ca91b6 Mon Sep 17 00:00:00 2001
+From 7cf45eab2845dd7d96ecef1748a947e5495561f7 Mon Sep 17 00:00:00 2001
 From: Peter Cai <peter@typeblog.net>
 Date: Wed, 16 Dec 2020 21:24:12 +0800
-Subject: [PATCH 17/51] Revert "Remove unused SystemProperties.set"
+Subject: [PATCH 17/52] Revert "Remove unused SystemProperties.set"
 
 This reverts commit debb4616ef67f9ed5054eca51ec58592358ff55f.
 
@@ -11,10 +11,10 @@ This reverts commit debb4616ef67f9ed5054eca51ec58592358ff55f.
  1 file changed, 69 insertions(+)
 
 diff --git a/telephony/java/android/telephony/TelephonyManager.java b/telephony/java/android/telephony/TelephonyManager.java
-index f206987ddbf6..73c957c47892 100644
+index 88acbabc0e0f..9d2ea48dce30 100644
 --- a/telephony/java/android/telephony/TelephonyManager.java
 +++ b/telephony/java/android/telephony/TelephonyManager.java
-@@ -8152,6 +8152,75 @@ public class TelephonyManager {
+@@ -8504,6 +8504,75 @@ public class TelephonyManager {
          }
      }
  
@@ -91,5 +91,5 @@ index f206987ddbf6..73c957c47892 100644
       * Inserts or updates a list property. Expands the list if its length is not enough.
       */
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

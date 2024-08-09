@@ -1,7 +1,7 @@
-From ee91ba3884a07c462ef75ce512c32359ef0f9ae9 Mon Sep 17 00:00:00 2001
+From 92d065d467402aa42abcd886653a9e8d57c70a20 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Tue, 2 Feb 2021 10:20:51 +0000
-Subject: [PATCH 20/51] Fix Wakelock issue
+Subject: [PATCH 20/52] Fix Wakelock issue
 
 Prevent SystemUI crash due to "WakeLock under-locked Doze" (issue #12) by only releasing a wakelock that was not already released
 ---
@@ -9,10 +9,10 @@ Prevent SystemUI crash due to "WakeLock under-locked Doze" (issue #12) by only r
  1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/packages/SystemUI/src/com/android/systemui/util/wakelock/WakeLock.java b/packages/SystemUI/src/com/android/systemui/util/wakelock/WakeLock.java
-index 6128feee8116..b60905b39e32 100644
+index 707751a58d84..72a522e22693 100644
 --- a/packages/SystemUI/src/com/android/systemui/util/wakelock/WakeLock.java
 +++ b/packages/SystemUI/src/com/android/systemui/util/wakelock/WakeLock.java
-@@ -143,7 +143,9 @@ public interface WakeLock {
+@@ -150,7 +150,9 @@ public interface WakeLock {
                  if (logger != null) {
                      logger.logRelease(inner, why, count);
                  }
@@ -24,5 +24,5 @@ index 6128feee8116..b60905b39e32 100644
  
              /** @see PowerManager.WakeLock#wrap(Runnable) */
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 

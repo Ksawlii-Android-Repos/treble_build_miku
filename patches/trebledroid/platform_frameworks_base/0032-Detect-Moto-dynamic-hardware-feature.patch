@@ -1,7 +1,7 @@
-From e79b79fb8226722f0d465acdfe46b35eebcf2305 Mon Sep 17 00:00:00 2001
+From 36a90546276a571627530faaf06faf778652eb41 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 5 Jul 2023 10:50:36 -0400
-Subject: [PATCH 32/51] Detect Moto dynamic hardware feature
+Subject: [PATCH 32/52] Detect Moto dynamic hardware feature
 
 Moto added a custom node in sysconfig XMLs:
 <unavailable-feature-conditional />
@@ -14,10 +14,10 @@ NFC-less variants
  1 file changed, 19 insertions(+)
 
 diff --git a/services/core/java/com/android/server/SystemConfig.java b/services/core/java/com/android/server/SystemConfig.java
-index 40b29d7b09d5..38e82d8cac36 100644
+index e1d7be121865..c8dafc5024d7 100644
 --- a/services/core/java/com/android/server/SystemConfig.java
 +++ b/services/core/java/com/android/server/SystemConfig.java
-@@ -946,6 +946,25 @@ public class SystemConfig {
+@@ -989,6 +989,25 @@ public class SystemConfig {
                          }
                          XmlUtils.skipCurrentTag(parser);
                      } break;
@@ -44,5 +44,5 @@ index 40b29d7b09d5..38e82d8cac36 100644
                          if (allowOverrideAppRestrictions) {
                              String pkgname = parser.getAttributeValue(null, "package");
 -- 
-2.39.3 (Apple Git-145)
+2.46.0.windows.1
 
