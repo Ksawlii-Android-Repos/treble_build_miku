@@ -187,7 +187,7 @@ buildTreble() {
     echo
     echo "--> $BUILD_TREBLE_IMAGE: $1"
     echo
-    lunch $1-ap1a-userdebug
+    lunch $1-ap2a-userdebug
     make -j$(nproc --all) systemimage
     mv $OUT/system.img $BD/system-$1.img
     make installclean
