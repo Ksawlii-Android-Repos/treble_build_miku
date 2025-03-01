@@ -1,64 +1,63 @@
 # Miku UI GSI
 
-**中文** | [English](README-EN.md) | [日本語](README-JP.md)
+## Preface
+This is an Android project for Miku fans. If you don't like it, please close this page, but don't attack Miku and the author of this project.
 
-## 前言
-这是送给所有Miku粉丝的Android项目，如果不喜欢它请关闭本页面，但不要攻击任何人，尤其是其作者。
+## Version
+Latest version: 0.12.0
 
-## 版本
-最新版本: 0.12.0
+[Downloads](https://github.com/xiaoleGun/treble_build_miku/releases)
 
-[下载](https://github.com/xiaoleGun/treble_build_miku/releases)
-
-## 变体
-示例
+## Variant
+Examples
 > MikuUI-TDA-0.13.3-arm64-ab-vndklite-gapps-20230406-UNOFFICIAL.img.xz
 
-从前到后，分别为
+They are
 ```
-ProjectName-{SNOW | SNOWLAND | TDA | Udon}-版本号-arm64-ab-vndklite-gapps-构建日期-构建类型
- |                |          |     |               |    |     |      |
- |                |          |     |               |    |     |      |
- |                |          |     |               |    |     |   谷歌服务
- |                |          |     |               |    |     |
- |                |          |     |               |    |     |
- |                |          |     |               |    |    用于vndklite的设备
- |                |          |     |               |    |    支持system读写
- |                |          |     |               |    |
- |                |          |     |               |  分区类型，仅构建AB(1)
- |                |          |     |               |
- |                |          |     |               |
- |                |          |     |          CPU架构，构建64位和a64(2)
+ProjectName-{SNOW | SNOWLAND | TDA | Udon}-version-arm64-ab-vndklite-gapps-BuildDate-Buildtype
+ |                |          |     |                  |    |     |      |
+ |                |          |     |                  |    |     |      |
+ |                |          |     |                  |    |     |     GMS
+ |                |          |     |                  |    |     |
+ |                |          |     |                  |    |     |
+ |                |          |     |                  |    |    It is used for vndklite devices and 
+ |                |          |     |                  |    |    supports system reading and writing.
+ |                |          |     |                  |    |
+ |                |          |     |                  |  Partition type, only AB variants are provided.(1)
+ |                |          |     |                  |
+ |                |          |     |                  |
+ |                |          |     |             CPU arch, build 64 bits and a64(2).
  |                |          |     |
  |     Android 12 | 12.1     | 13  | 14
  |
 Miku UI
 ```
 
-(1) 安卓9及以上的底包支持SAR(system-as-root)，所以可以使用AB分区类型的GSI
+(1) Vendors of Android 9 and above support SAR(system-as-root), so GSI of AB partition type can be used.
 
 (2) arm32 binder64
 
-## 构建
-要开始构建Miku UI GSI，您需要熟悉[Git和Repo](https://source.android.com/source/using-repo.html)和[How to build a GSI](https://github.com/phhusson/treble_experimentations/wiki/How-to-build-a-GSI%3F).
-- 安装依赖
+## Build
+To get started with building Miku UI GSI, you'll need to get familiar with [Git and Repo](https://source.android.com/source/using-repo.html) as well as [How to build a GSI](https://github.com/phhusson/treble_experimentations/wiki/How-to-build-a-GSI%3F).
+- Install dependencies
     ```
     sudo apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev xattr openjdk-11-jdk jq android-sdk-libsparse-utils python3 python2 repo
     ```
-- 新建Miku工作区并进入
+- Create a new working directory for your Miku UI build and navigate to it:
     ```
     mkdir miku-treble && cd miku-treble
     ```
-- 下载本仓库
+- Clone this repo:
     ```
-    git clone https://github.com/xiaoleGun/treble_build_miku -b Udon_v2
+    git clone https://github.com/Ksawlii-Android-Repos/treble_build_miku -b Udon_v2
     ```
-- 完成之后运行脚本:
+- Finally, start the build script:
     ```
     bash treble_build_miku/build.sh
     ```
 
-## 感谢
+## Credits
+These people have helped this project in some way or another, so they should be the ones who receive all the credit:
 - [Miku-UI](https://github.com/Miku-UI)
 - [phhusson](https://github.com/phhusson)
 - [AndyCGYan](https://github.com/AndyCGYan)
@@ -69,3 +68,4 @@ Miku UI
 - [haridhayal11](https://github.com/haridhayal11)
 - [sooti](https://github.com/sooti)
 - [Iceows](https://github.com/Iceows)
+- [Mytja](https://github.com/mytja)
