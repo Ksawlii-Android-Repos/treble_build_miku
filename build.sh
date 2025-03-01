@@ -181,7 +181,7 @@ BUILD_DATE="$(date +%Y%m%d)"
 SD=$(cd $(dirname $0);pwd)
 BD=$HOME/builds
 VERSION=Udon_v2
-VERSION_CODE=`grep -oP '(?<=最新版本: ).*' $SD/README.md`
+VERSION_CODE=0.12.0
 
 multipleLanguages
 warning
