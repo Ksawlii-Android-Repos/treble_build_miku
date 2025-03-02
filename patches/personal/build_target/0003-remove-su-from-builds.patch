@@ -1,0 +1,26 @@
+From 4042fed40b26cc15be5faac3cea52f264805c507 Mon Sep 17 00:00:00 2001
+From: mytja <mitja@severkar.eu>
+Date: Sun, 2 Mar 2025 23:05:54 +0000
+Subject: [PATCH 3/3] remove su from builds
+
+Change-Id: I24f3361a23dd1a9b05627a46f4188777143b288c
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ target/product/base_system.mk | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/target/product/base_system.mk b/target/product/base_system.mk
+index a02dfc3..2222fab 100644
+--- a/target/product/base_system.mk
++++ b/target/product/base_system.mk
+@@ -473,7 +473,6 @@ PRODUCT_PACKAGES_DEBUG := \
+     ss \
+     start_with_lockagent \
+     strace \
+-    su \
+     sanitizer-status \
+     tracepath \
+     tracepath6 \
+-- 
+2.48.1
+

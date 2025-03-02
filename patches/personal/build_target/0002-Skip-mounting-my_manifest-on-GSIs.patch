@@ -1,7 +1,7 @@
-From 7dd581c0b7f96c74dd8768237e608a57c7801881 Mon Sep 17 00:00:00 2001
+From c24a1c2391775a05297fb45a8f08240635062ffa Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
 Date: Sun, 2 Mar 2025 20:23:49 +0000
-Subject: [PATCH 2/2] Skip mounting /my_manifest on GSIs
+Subject: [PATCH 2/3] Skip mounting /my_manifest on GSIs
 
 Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 
