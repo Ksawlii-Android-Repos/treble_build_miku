@@ -1,0 +1,34 @@
+From 7d689e68ad0edcee691f9e3ef82c18062b38b05e Mon Sep 17 00:00:00 2001
+From: ChonDoit <thphantomblog@gmail.com>
+Date: Sun, 2 Mar 2025 22:59:01 +0000
+Subject: [PATCH 4/4] treble: Spoof pixel props
+
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ spoof_props.sh | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 spoof_props.sh
+
+diff --git a/spoof_props.sh b/spoof_props.sh
+new file mode 100644
+index 0000000..1f16bdd
+--- /dev/null
++++ b/spoof_props.sh
+@@ -0,0 +1,14 @@
++#!/system/bin/sh
++
++resetprop_phh persist.sys.spoof.product caiman
++resetprop_phh persist.sys.spoof.device caiman
++resetprop_phh persist.sys.spoof.manufacturer Google
++resetprop_phh persist.sys.spoof.brand google
++resetprop_phh persist.sys.spoof.model "Pixel 9 Pro"
++resetprop_phh persist.sys.spoof.fingerprint google/caiman/caiman:15/AP4A.250205.002/12821496:user/release-keys
++resetprop_phh persist.sys.spoof.security_patch 2025-02-05
++resetprop_phh persist.sys.spoof.first_api_level 34
++resetprop_phh persist.sys.spoof.id AP4A.250205.002
++resetprop_phh persist.sys.spoof.type user
++resetprop_phh persist.sys.spoof.tags release-keys
++resetprop_phh -p --delete persist.sys.spoof.auto_update
+-- 
+2.48.1
+

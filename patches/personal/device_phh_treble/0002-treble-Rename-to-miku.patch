@@ -1,7 +1,7 @@
-From 95ceb0477e09c1dafca89affb309708dfe8eb8c4 Mon Sep 17 00:00:00 2001
+From f2196b63832fc066876cc8d3022901fb5b0f9c91 Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
 Date: Sun, 2 Mar 2025 12:08:25 +0000
-Subject: [PATCH 2/3] treble: Rename to miku
+Subject: [PATCH 2/4] treble: Rename to miku
 
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
 ---
