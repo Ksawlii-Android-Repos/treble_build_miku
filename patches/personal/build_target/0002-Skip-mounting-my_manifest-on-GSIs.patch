@@ -1,0 +1,27 @@
+From 7dd581c0b7f96c74dd8768237e608a57c7801881 Mon Sep 17 00:00:00 2001
+From: Ksawlii <ksawery.blaszczak@proton.me>
+Date: Sun, 2 Mar 2025 20:23:49 +0000
+Subject: [PATCH 2/2] Skip mounting /my_manifest on GSIs
+
+Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
+
+Change-Id: I305116e5a9cbf8a9ea5a11306c25a1ec143b45d9
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ target/product/gsi/gsi_skip_mount.cfg | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/target/product/gsi/gsi_skip_mount.cfg b/target/product/gsi/gsi_skip_mount.cfg
+index 28f4349..612c3bc 100644
+--- a/target/product/gsi/gsi_skip_mount.cfg
++++ b/target/product/gsi/gsi_skip_mount.cfg
+@@ -7,3 +7,6 @@
+ /product/*
+ /system_ext/*
+ /system/*
++# Skip OPlus "my_manifest" mountpoints.
++/mnt/vendor/my_manifest
++/my_manifest
+-- 
+2.48.1
+
