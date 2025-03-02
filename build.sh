@@ -143,7 +143,11 @@ generatePackages() {
     echo
     BASE_IMAGE=$BD/system-$1.img
     mkdir --parents $BD/dsu/$1/; mv $BASE_IMAGE $BD/dsu/$1/system.img
-    xz -cv9 $BD/dsu/$1/system.img -T0 > $BD/MikuUI-$VERSION-$VERSION_CODE-$2$3-$BUILD_DATE-UNOFFICIAL.img.xz
+    if [ "$NO_COMPRESS" = "true" ]; then
+        mv "$BD/dsu/$1/system.img" "$BD/MikuUI-$VERSION-$VERSION_CODE-$2$3-$BUILD_DATE-UNOFFICIAL.img"
+    else
+        xz -cv9 --threads=0 "$BD/dsu/$1/system.img" > "$BD/MikuUI-$VERSION-$VERSION_CODE-$2$3-$BUILD_DATE-UNOFFICIAL.img.xz"
+    fi
     rm -rf $BD/dsu
 }
 
