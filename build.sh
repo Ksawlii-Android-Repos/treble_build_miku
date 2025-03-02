@@ -27,6 +27,17 @@ warning() {
     echo "-----------------------------------------"
     echo
     echo "$SHOW_VERSION: $VERSION_CODE"
+    echo 
+    if [ -n "$VANILLA_ONLY" ] && [ -n "$GAPPS_ONLY" ]; then
+    echo "Warning: Both VANILLA_ONLY and GAPPS_ONLY are set! This script will not build both. Please unset one."
+    exit 1
+    elif [ -n "$VANILLA_ONLY" ]; then
+    echo "Building Vanilla only. If you want GApps build too, unset the VANILLA_ONLY variable."
+    elif [ -n "$GAPPS_ONLY" ]; then
+    echo "Building GApps only. If you want Vanilla build too, unset the GAPPS_ONLY variable."
+    else
+    echo "Building both Vanilla and GApps."
+    fi
     echo
 }
 
@@ -199,11 +210,23 @@ initEnvironment
 generateDevice
 buildTrebleApp
 
-buildTreble miku_treble_arm64_bvN
-buildTreble miku_treble_arm64_bgN
+if [ "$VANILLA_ONLY" = "true" ]; then
+    buildTreble miku_treble_arm64_bvN
+elif [ "$GAPPS_ONLY" = "true" ]; then
+    buildTreble miku_treble_arm64_bgN
+else
+    buildTreble miku_treble_arm64_bvN
+    buildTreble miku_treble_arm64_bgN
+fi
 
-generatePackages miku_treble_arm64_bvN arm64-ab
-generatePackages miku_treble_arm64_bgN arm64-ab -gapps
+if [ "$VANILLA_ONLY" = "true" ]; then
+    generatePackages miku_treble_arm64_bvN arm64-ab
+elif [ "$GAPPS_ONLY" = "true" ]; then
+    generatePackages miku_treble_arm64_bgN arm64-ab -gapps
+else
+    generatePackages miku_treble_arm64_bvN arm64-ab
+    generatePackages miku_treble_arm64_bgN arm64-ab -gapps
+fi
 
 END=$(date +%s)
 ELAPSEDM=$(($(($END - $START)) / 60))
