@@ -1,9 +1,8 @@
-From dfe5d272c955898d029752f3fbd59cc11e916628 Mon Sep 17 00:00:00 2001
+From 71e0afc7166b3780e7c1c8f2d566c5c0b718b1c4 Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
-Date: Sun, 2 Mar 2025 10:56:08 +0000
+Date: Sun, 2 Mar 2025 11:56:51 +0000
 Subject: [PATCH 1/2] treble: Miku UI Bringup
 
-Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
 ---
  base.mk                                       |  4 +++-
  miku.mk                                       | 13 +++++++++++++
@@ -14,7 +13,7 @@ Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
  create mode 100644 overlay-miku/packages/apps/Settings/res/values/miku_strings.xml
 
 diff --git a/base.mk b/base.mk
-index a2340bb..95bb980 100644
+index a2340bb..c5abdd0 100644
 --- a/base.mk
 +++ b/base.mk
 @@ -18,7 +18,9 @@ PRODUCT_COPY_FILES += \
@@ -22,7 +21,7 @@ index a2340bb..95bb980 100644
  
  SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/phh/treble/sepolicy
 -PRODUCT_PACKAGE_OVERLAYS += device/phh/treble/overlay
-+PRODUCT_PACKAGE_OVERLAYS += \ 
++PRODUCT_PACKAGE_OVERLAYS += \
 +		device/phh/treble/overlay \
 +		device/phh/treble/overlay-miku
  
