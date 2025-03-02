@@ -1,7 +1,7 @@
-From 9861283567d6c0978d2de594540d015a0800eab3 Mon Sep 17 00:00:00 2001
+From 26e855b5609749bf875e4211676fd4ad18765db8 Mon Sep 17 00:00:00 2001
 From: Victor Bo <bvoid@yandex.ru>
 Date: Tue, 15 Sep 2020 21:26:45 -0400
-Subject: [PATCH 09/13] treble: add offline charger sepolicy
+Subject: [PATCH 7/9] treble: add offline charger sepolicy
 
 ---
  sepolicy/gsicharger.te | 1 +
@@ -16,5 +16,5 @@ index 0000000..91cfb5c
 @@ -0,0 +1 @@
 +permissive charger;
 -- 
-2.39.3 (Apple Git-145)
+2.48.1
 

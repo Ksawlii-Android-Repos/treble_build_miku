@@ -1,21 +1,20 @@
-From 806ccda9a3dc3032a7a3a8e3f80186b2d7795e3c Mon Sep 17 00:00:00 2001
+From dfe5d272c955898d029752f3fbd59cc11e916628 Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
-Date: Sat, 1 Mar 2025 18:22:46 +0100
+Date: Sun, 2 Mar 2025 10:56:08 +0000
 Subject: [PATCH] treble: Miku UI Bringup
 
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
 ---
  base.mk                                       |  4 +++-
- miku.mk                                       | 12 ++++++++++++
+ miku.mk                                       | 13 +++++++++++++
  .../dialer/callrecord/res/values/config.xml   | 18 ++++++++++++++++++
  .../apps/Settings/res/values/miku_strings.xml | 19 +++++++++++++++++++
- 4 files changed, 52 insertions(+), 1 deletion(-)
- create mode 100644 miku.mk
+ 4 files changed, 53 insertions(+), 1 deletion(-)
  create mode 100644 overlay-miku/packages/apps/Dialer/java/com/android/dialer/callrecord/res/values/config.xml
  create mode 100644 overlay-miku/packages/apps/Settings/res/values/miku_strings.xml
 
 diff --git a/base.mk b/base.mk
-index 43e261b..3261f47 100644
+index a2340bb..95bb980 100644
 --- a/base.mk
 +++ b/base.mk
 @@ -18,7 +18,9 @@ PRODUCT_COPY_FILES += \
@@ -23,18 +22,17 @@ index 43e261b..3261f47 100644
  
  SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/phh/treble/sepolicy
 -PRODUCT_PACKAGE_OVERLAYS += device/phh/treble/overlay
-+PRODUCT_PACKAGE_OVERLAYS += \
++PRODUCT_PACKAGE_OVERLAYS += \ 
 +		device/phh/treble/overlay \
 +		device/phh/treble/overlay-miku
  
  $(call inherit-product, vendor/hardware_overlay/overlay.mk)
  $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 diff --git a/miku.mk b/miku.mk
-new file mode 100644
-index 0000000..58ed887
---- /dev/null
+index fc9e2f9..3cd4ef4 100644
+--- a/miku.mk
 +++ b/miku.mk
-@@ -0,0 +1,12 @@
+@@ -1,2 +1,15 @@
 +# Inherit some common Miku stuff
 +$(call inherit-product, vendor/miku/build/product/miku_product.mk)
 +-include vendor/miku/build/core/config.mk
@@ -47,6 +45,9 @@ index 0000000..58ed887
 +
 +# Maintaier
 +MIKU_MASTER := Ksawlii
++
+ # Partitions
+ BOARD_EXT4_SHARE_DUP_BLOCKS := true
 diff --git a/overlay-miku/packages/apps/Dialer/java/com/android/dialer/callrecord/res/values/config.xml b/overlay-miku/packages/apps/Dialer/java/com/android/dialer/callrecord/res/values/config.xml
 new file mode 100644
 index 0000000..1b8238b
@@ -97,5 +98,5 @@ index 0000000..ae3f00e
 +
 +</resources>
 -- 
-2.45.3
+2.48.1
 

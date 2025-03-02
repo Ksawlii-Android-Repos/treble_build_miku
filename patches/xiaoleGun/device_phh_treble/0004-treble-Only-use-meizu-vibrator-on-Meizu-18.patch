@@ -1,7 +1,7 @@
-From a581a88cb95005ab82b46d6c9e8939d0ee35d104 Mon Sep 17 00:00:00 2001
+From e672149bcc36aa84e4e5ff5202e814c8641c069e Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Sun, 27 Jun 2021 05:21:38 +0000
-Subject: [PATCH 05/13] treble: Only use meizu-vibrator on Meizu 18
+Subject: [PATCH 4/9] treble: Only use meizu-vibrator on Meizu 18
 
 - Convert manifest to VINTF fragment
 - If not the target device, bind to dummy manifest on boot
@@ -18,10 +18,10 @@ Change-Id: I97fc52a98a77aa72bbd5601f36abc0cf18efbaea
  create mode 100644 hal/meizu-vibrator/manifest_dummy.xml
 
 diff --git a/framework_manifest.xml b/framework_manifest.xml
-index 1b45b4a..cb37b49 100644
+index e32e772..f11518a 100644
 --- a/framework_manifest.xml
 +++ b/framework_manifest.xml
-@@ -19,15 +19,5 @@
+@@ -9,15 +9,5 @@
              <instance>default</instance>
          </interface>
      </hal>
@@ -76,10 +76,10 @@ index 0000000..b34a10b
 +<manifest version="1.0" type="framework">
 +</manifest>
 diff --git a/rw-system.sh b/rw-system.sh
-index 3bc3396..1424e91 100644
+index 7dd1a88..67b763d 100644
 --- a/rw-system.sh
 +++ b/rw-system.sh
-@@ -398,6 +398,12 @@ if [ "$foundFingerprint" = false ];then
+@@ -404,6 +404,12 @@ if [ "$foundFingerprint" = false ];then
      mount -o bind system/phh/empty /system/etc/permissions/android.hardware.fingerprint.xml
  fi
  
@@ -93,5 +93,5 @@ index 3bc3396..1424e91 100644
      mount -o bind system/phh/empty /system/etc/permissions/android.hardware.bluetooth.xml
      mount -o bind system/phh/empty /system/etc/permissions/android.hardware.bluetooth_le.xml
 -- 
-2.39.3 (Apple Git-145)
+2.48.1
 

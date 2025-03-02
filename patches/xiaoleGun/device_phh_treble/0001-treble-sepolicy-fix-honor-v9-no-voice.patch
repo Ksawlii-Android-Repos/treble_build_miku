@@ -1,7 +1,7 @@
-From 64a3782c0138c154cdd7b7f47d11fdd9722bdbcf Mon Sep 17 00:00:00 2001
+From f83db7cc2d3b74c3e4d439d477ba40facaa0eb6b Mon Sep 17 00:00:00 2001
 From: kindle4jerry <kindle4jerry@gmail.com>
 Date: Sun, 6 Feb 2022 14:42:18 +0800
-Subject: [PATCH 02/13] treble: sepolicy: fix honor v9 no voice
+Subject: [PATCH 1/9] treble: sepolicy: fix honor v9 no voice
 
 Signed-off-by: xiaoleGun <1592501605@qq.com>
 ---
@@ -19,5 +19,5 @@ index beb639a..a0bfa2d 100644
  /system/bin/vndk-detect			u:object_r:vndk_detect_exec:s0
  /system/etc/usb_audio_policy_configuration.xml	u:object_r:vendor_configs_file:s0
 -- 
-2.39.3 (Apple Git-145)
+2.48.1
 

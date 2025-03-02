@@ -8,6 +8,7 @@ multipleLanguages() {
     PREPARE_LOCAL_MANIFEST="Preparing local manifest"
     SYNC_REPOS="Syncing repos"
     APPLY_TREBLEDROID_PATCH="Applying trebledroid patches"
+    APPLY_XIAOLEGUN_PATCH="Applying xiaoleGun patches"
     APPLY_PERSONAL_PATCH="Applying personal patches"
     SET_UP_ENVIRONMENT="Setting up build environment"
     GEN_DEVICE_MAKEFILE="Treble device generation"
@@ -101,6 +102,10 @@ applyingPatches() {
     echo "--> $APPLY_TREBLEDROID_PATCH"
     echo
     applyPatches $SD trebledroid
+    echo
+    echo "--> $APPLY_XIAOLEGUN_PATCH"
+    echo
+    applyPatches $SD xiaoleGun
     echo
     echo "--> $APPLY_PERSONAL_PATCH"
     echo
