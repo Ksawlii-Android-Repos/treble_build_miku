@@ -1,0 +1,31 @@
+From e319e5a8bfc4d692ece73d8a9d019f3ab29da9ba Mon Sep 17 00:00:00 2001
+From: Ksawlii <ksawery.blaszczak@proton.me>
+Date: Sun, 2 Mar 2025 11:44:50 +0000
+Subject: [PATCH 2/2] treble: Rename to miku
+
+---
+ generate.sh | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/generate.sh b/generate.sh
+index 37bc9ad..5643493 100644
+--- a/generate.sh
++++ b/generate.sh
+@@ -88,10 +88,10 @@ $apps_script
+ $rom_script
+ 
+ PRODUCT_NAME := $target
+-PRODUCT_DEVICE := tdgsi_${arch}_$part
+-PRODUCT_BRAND := google
+-PRODUCT_SYSTEM_BRAND := google
+-PRODUCT_MODEL := TrebleDroid $apps_name
++PRODUCT_DEVICE := miku_${arch}_$part
++PRODUCT_BRAND := miku
++PRODUCT_SYSTEM_BRAND := miku
++PRODUCT_MODEL := MikuUI Device
+ 
+ # Overwrite the inherited "emulator" characteristics
+ PRODUCT_CHARACTERISTICS := device
+-- 
+2.48.1
+
