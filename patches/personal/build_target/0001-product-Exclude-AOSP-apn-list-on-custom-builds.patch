@@ -1,0 +1,29 @@
+From 0e86e4373854821cf1f0094ac583f0535d044913 Mon Sep 17 00:00:00 2001
+From: Alberto Ponces <ponces26@gmail.com>
+Date: Sun, 2 Mar 2025 20:21:09 +0000
+Subject: [PATCH] product: Exclude AOSP apn list on custom builds
+
+Change-Id: I2337a93ecc90152d2de098e052447488e825a626
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ target/product/aosp_product.mk | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/target/product/aosp_product.mk b/target/product/aosp_product.mk
+index 6c63122..ec37f3e 100644
+--- a/target/product/aosp_product.mk
++++ b/target/product/aosp_product.mk
+@@ -39,10 +39,3 @@ PRODUCT_PACKAGES += \
+     preinstalled-packages-platform-aosp-product.xml \
+     ThemePicker \
+     WallpaperPicker \
+-
+-# Telephony:
+-#   Provide a APN configuration to GSI product
+-ifeq ($(MIKU_BUILD),)
+-PRODUCT_COPY_FILES += \
+-    device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+-endif
+-- 
+2.48.1
+
