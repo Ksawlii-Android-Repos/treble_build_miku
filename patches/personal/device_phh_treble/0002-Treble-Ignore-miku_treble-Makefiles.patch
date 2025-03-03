@@ -1,7 +1,7 @@
 From a5a0cfc026306bccc83ffed16f50c747559128ac Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
 Date: Sun, 2 Mar 2025 21:04:32 +0000
-Subject: [PATCH 2/4] Treble: Ignore miku_treble Makefiles
+Subject: [PATCH 2/5] Treble: Ignore miku_treble Makefiles
 
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
 ---

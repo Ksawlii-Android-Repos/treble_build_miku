@@ -1,7 +1,7 @@
 From 72be778285f7f94868549602101845825bc27080 Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
 Date: Sun, 2 Mar 2025 12:08:12 +0000
-Subject: [PATCH 1/4] treble: Miku UI Bringup
+Subject: [PATCH 1/5] treble: Miku UI Bringup
 
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
 ---

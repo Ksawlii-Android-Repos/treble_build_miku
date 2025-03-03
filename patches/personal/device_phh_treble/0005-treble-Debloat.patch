@@ -1,0 +1,61 @@
+From 012af702b477ac92963139540dac9aa66b22eaaa Mon Sep 17 00:00:00 2001
+From: Ksawlii <ksawery.blaszczak@proton.me>
+Date: Mon, 3 Mar 2025 16:56:22 +0000
+Subject: [PATCH 5/5] treble: Debloat
+
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ Debloat/Android.mk | 28 ++++++++++++++++++++++++++++
+ miku.mk            |  4 ++++
+ 2 files changed, 32 insertions(+)
+ create mode 100644 Debloat/Android.mk
+
+diff --git a/Debloat/Android.mk b/Debloat/Android.mk
+new file mode 100644
+index 0000000..44d65ab
+--- /dev/null
++++ b/Debloat/Android.mk
+@@ -0,0 +1,28 @@
++LOCAL_PATH := $(call my-dir)
++
++include $(CLEAR_VARS)
++LOCAL_MODULE := Debloat
++LOCAL_MODULE_CLASS := APPS
++LOCAL_MODULE_TAGS := optional
++LOCAL_OVERRIDES_PACKAGES += \
++		CalculatorGoogle \
++		CalendarGoogle \
++		Gmail2 \
++		SpeechServicesByGoogle \
++		FamilyLinkParentalControls \
++		AndroidAutoStub \
++		Turbo \
++		Velvet \
++		GoogleFeedback \
++		Photos \
++		BasicDreams \
++		BookmarkProvider \
++		MusicFX \
++		HTMLViewer \
++		Calendar \
++		Music \
++		Calendar
++LOCAL_UNINSTALLABLE_MODULE := true
++LOCAL_CERTIFICATE := PRESIGNED
++LOCAL_SRC_FILES := /dev/null
++include $(BUILD_PREBUILT)
+diff --git a/miku.mk b/miku.mk
+index 650da5c..ac9709a 100644
+--- a/miku.mk
++++ b/miku.mk
+@@ -16,3 +16,7 @@ BOARD_EXT4_SHARE_DUP_BLOCKS := true
+ 
+ # Exclude AudioFX
+ TARGET_EXCLUDES_AUDIOFX := true
++
++# Debloat
++PRODUCT_PACKAGES += \
++    Debloat
+-- 
+2.48.1
+
