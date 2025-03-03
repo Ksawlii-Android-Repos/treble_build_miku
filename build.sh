@@ -15,7 +15,7 @@ multipleLanguages() {
     GEN_DEVICE_MAKEFILE="Treble device generation"
     BUILD_TREBLE_APP="Building treble app"
     BUILD_TREBLE_IMAGE="Building treble image"
-    # TEMP DISABLE: GEN_UP_JSON="Generating Update json"
+    GEN_UP_JSON="Generating Update json"
     COMPLETED="Buildbot completed in $1 minutes and $2 seconds"
 }
 
@@ -157,32 +157,29 @@ generatePackages() {
     rm -rf $BD/dsu
 }
 
-# TEMP DISABLE
-#generateOtaJson() {
-#    echo
-#    echo "--> $GEN_UP_JSON"
-#    echo
-#    prefix="MikuUI-$VERSION-$VERSION_CODE-"
-#    suffix="-$BUILD_DATE-UNOFFICIAL.img.gz"
-#    json="{\"version\": \"$VERSION_CODE\",\"date\": \"$(date +%s -d '-4hours')\",\"variants\": ["
-#    find $BD -name "*.img.xz" | {
-#        while read file; do
-#            packageVariant=$(echo $(basename $file) | sed -e s/^$prefix// -e s/$suffix$//)
-#            case $packageVariant in
-#                "arm64-ab") name="miku_treble_arm64_bvN" ;;
-#                "arm64-ab-vndklite") name="miku_treble_arm64_bvN-vndklite" ;;
-#                "arm64-ab-gapps") name="miku_treble_arm64_bgN" ;;
-#                "arm64-ab-gapps-vndklite") name="miku_treble_arm64_bgN-vndklite" ;;
-#            esac
-#            size=$(wc -c $file | awk '{print $1}')
-#            url="https://github.com/xiaoleGun/treble_build_miku/releases/download/$VERSION-$VERSION_CODE/$(basename $file)"
-#            json="${json} {\"name\": \"$name\",\"size\": \"$size\",\"url\": \"$url\"},"
-#        done
-#        json="${json%?}]}"
-#        echo "$json" | jq '.variants |= sort_by(.name)' > $SD/ota.json
-#        cp $SD/ota.json $BD/ota.json
-#    }
-#}
+generateOtaJson() {
+    echo
+    echo "--> $GEN_UP_JSON"
+    echo
+    prefix="MikuUI-$VERSION-$VERSION_CODE-"
+    suffix="-$BUILD_DATE-UNOFFICIAL.img.gz"
+    json="{\"version\": \"$VERSION_CODE\",\"date\": \"$(date +%s -d '-4hours')\",\"variants\": ["
+    find $BD -name "*.img.xz" | {
+        while read file; do
+            packageVariant=$(echo $(basename $file) | sed -e s/^$prefix// -e s/$suffix$//)
+            case $packageVariant in
+                "arm64-ab") name="miku_treble_arm64_bvN" ;;
+                "arm64-ab-gapps") name="miku_treble_arm64_bgN" ;;
+            esac
+            size=$(wc -c $file | awk '{print $1}')
+            url="https://github.com/Ksawlii-Android-Repos/treble_build_miku/releases/download/$VERSION-$VERSION_CODE-$BUILD_DATE/$(basename $file)"
+            json="${json} {\"name\": \"$name\",\"size\": \"$size\",\"url\": \"$url\"},"
+        done
+        json="${json%?}]}"
+        echo "$json" | jq '.variants |= sort_by(.name)' > $SD/miku.json
+        cp $SD/miku.json $BD/miku.json
+    }
+}
 
 # Performing function
 START=$(date +%s)
@@ -222,6 +219,8 @@ else
     generatePackages miku_treble_arm64_bvN arm64-ab
     generatePackages miku_treble_arm64_bgN arm64-ab -gapps
 fi
+
+generateOtaJson
 
 END=$(date +%s)
 ELAPSEDM=$(($(($END - $START)) / 60))
