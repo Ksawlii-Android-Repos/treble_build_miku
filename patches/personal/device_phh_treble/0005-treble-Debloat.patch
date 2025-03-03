@@ -1,7 +1,7 @@
-From 012af702b477ac92963139540dac9aa66b22eaaa Mon Sep 17 00:00:00 2001
+From 94f327ce142e95e029736a45e8400e4707e0ad4e Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
 Date: Mon, 3 Mar 2025 16:56:22 +0000
-Subject: [PATCH 5/5] treble: Debloat
+Subject: [PATCH 5/6] treble: Debloat
 
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
 ---

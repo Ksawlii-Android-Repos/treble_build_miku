@@ -1,7 +1,7 @@
-From 9c3a42e9ed3e9721826acec6694620444aac6c95 Mon Sep 17 00:00:00 2001
+From 654c5e648de4681fff68ee1fe310ee5572fdc2ba Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
 Date: Mon, 3 Mar 2025 16:43:10 +0000
-Subject: [PATCH 4/5] treble: Exclude AudioFX
+Subject: [PATCH 4/6] treble: Exclude AudioFX
 
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
 ---

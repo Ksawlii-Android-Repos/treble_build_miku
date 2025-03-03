@@ -1,0 +1,25 @@
+From 01788ec9231218a90548439a3f56ac4a44f83d57 Mon Sep 17 00:00:00 2001
+From: xiaoleGun <1592501605@qq.com>
+Date: Mon, 3 Mar 2025 23:41:40 +0000
+Subject: [PATCH 6/6] treble: import ota json from gist
+
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ miku.mk | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/miku.mk b/miku.mk
+index ac9709a..af68921 100644
+--- a/miku.mk
++++ b/miku.mk
+@@ -20,3 +20,7 @@ TARGET_EXCLUDES_AUDIOFX := true
+ # Debloat
+ PRODUCT_PACKAGES += \
+     Debloat
++
++# OTA json
++PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
++	ro.system.ota.json_url=https://gist.githubusercontent.com/Ksawlii/9f8e2795b6a42f808f800d5aa24615e9/raw/10517cbc4cd70f1e6a41fa1a2ca9b9fd98dc8424/miku.json
+-- 
+2.48.1
+

@@ -1,7 +1,7 @@
-From 4371eb3b507daa916a96288c97818d5e17bfe471 Mon Sep 17 00:00:00 2001
+From 3e3011cd2279875fff146db8eb3b78ca44b3efd7 Mon Sep 17 00:00:00 2001
 From: ChonDoit <thphantomblog@gmail.com>
 Date: Sun, 2 Mar 2025 22:59:01 +0000
-Subject: [PATCH 3/5] treble: Spoof pixel props
+Subject: [PATCH 3/6] treble: Spoof pixel props
 
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
 ---
