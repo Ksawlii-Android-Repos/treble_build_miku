@@ -1,4 +1,4 @@
-From 07cc06092e898da4d43c050172ffe818286628b4 Mon Sep 17 00:00:00 2001
+From 6fd048a79b4701cdd50ccb4521aceec6a5634ba9 Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
 Date: Sun, 2 Mar 2025 17:24:22 +0000
 Subject: [PATCH] core: Import ascii art from miku.mk for systemimage

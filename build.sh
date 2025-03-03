@@ -208,7 +208,7 @@ BUILD_DATE="$(date +%Y%m%d)"
 SD=$(cd $(dirname $0);pwd)
 BD=$HOME/builds
 VERSION=Udon_v2
-VERSION_CODE=0.12.0
+VERSION_CODE=0.12.0-extended
 
 multipleLanguages
 warning

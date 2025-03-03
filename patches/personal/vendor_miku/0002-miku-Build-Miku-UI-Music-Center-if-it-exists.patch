@@ -1,7 +1,7 @@
 From 34fc8c014b9618a21df2423cd5ef9eabdabc5a33 Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
 Date: Mon, 3 Mar 2025 11:53:50 +0000
-Subject: [PATCH 2/2] miku: Build Miku UI Music Center if it exists
+Subject: [PATCH 2/3] miku: Build Miku UI Music Center if it exists
 
 Change-Id: Id0944c4b8ed7fb7a8ebff80661fbb5e49db8f380
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>

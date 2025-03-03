@@ -1,0 +1,29 @@
+From abb1b1573c34f2a4db6bce9af813f8e5da3eebfd Mon Sep 17 00:00:00 2001
+From: Ksawlii <ksawery.blaszczak@proton.me>
+Date: Mon, 3 Mar 2025 11:57:56 +0000
+Subject: [PATCH 3/3] miku: Bump Miku UI Udon to v0.12.0-extended
+
+I think I can call it -extended since I plan on adding things from Vampire
+
+Change-Id: I4788e5e93bdc4f7de2f716837d2eb7f7aab76bcd
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ config/versioning.mk | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config/versioning.mk b/config/versioning.mk
+index a1359bc..998e4b4 100644
+--- a/config/versioning.mk
++++ b/config/versioning.mk
+@@ -20,7 +20,7 @@
+ PLATFORM_MIKU_RELEASE := Udon
+ PLATFORM_MIKU_VERSION := $(PLATFORM_MIKU_RELEASE).$(shell date +%y%m%d%H)
+ 
+-MIKU_ROM_VERSION := Udon_0.12.0
++MIKU_ROM_VERSION := Udon_0.12.0-extended
+ 
+ TARGET_PRODUCT_SHORT := $(subst miku_,,$(TARGET_DEVICE))
+ 
+-- 
+2.48.1
+
