@@ -1,7 +1,7 @@
-From b3fdecadfed29496c3fe71e17de58a3192dca2e7 Mon Sep 17 00:00:00 2001
+From 1b3d463c601a419bb6da47a1dcbe50c6b04f8088 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 30 Nov 2024 08:35:17 -0500
-Subject: [PATCH 4/4] Add persist.sys.phh.adb_secure to set adb secure
+Subject: [PATCH 4/7] Add persist.sys.phh.adb_secure to set adb secure
 
 ---
  vndk.rc | 4 ++++
@@ -20,5 +20,5 @@ index 6bd3950..c2b8eae 100644
 +    exec u:r:phhsu_daemon:s0 root -- /system/bin/resetprop_phh ro.adb.secure 1
 +    restart adbd
 -- 
-2.34.1
+2.48.1
 

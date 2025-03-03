@@ -1,0 +1,23 @@
+From d68b131dcf266ed459b0aad26a17b52fa3de86e8 Mon Sep 17 00:00:00 2001
+From: Pierre-Hugues Husson <phh@phh.me>
+Date: Tue, 7 Jan 2025 09:44:42 -0500
+Subject: [PATCH 5/7] Enable pen mode on lenovo/goodix
+
+---
+ rw-system.sh | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/rw-system.sh b/rw-system.sh
+index 8d092a1..9f2a745 100644
+--- a/rw-system.sh
++++ b/rw-system.sh
+@@ -1209,3 +1209,6 @@ fi
+ if [ -n "$(getprop ro.vendor.transsion.backlight_12bit)" ];then
+     setprop ro.vendor.transsion.backlight_hal.optimization $(getprop ro.vendor.transsion.backlight_12bit)
+ fi
++
++# Enable pen mode on Lenovo/goodix
++echo 1 > /sys/devices/platform/goodix_ts.0/support_pen
+-- 
+2.48.1
+

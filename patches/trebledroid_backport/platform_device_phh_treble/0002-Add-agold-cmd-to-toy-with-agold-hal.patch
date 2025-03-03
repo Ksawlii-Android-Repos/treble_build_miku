@@ -1,7 +1,7 @@
-From f3df0a948f801f69a07a56e081f3f1d600e5e655 Mon Sep 17 00:00:00 2001
+From 41405e11e565d184bc0f5e4b5c5c9553873d8bad Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Fri, 29 Nov 2024 20:13:49 -0500
-Subject: [PATCH 2/4] Add agold-cmd to toy with agold hal
+Subject: [PATCH 2/7] Add agold-cmd to toy with agold hal
 
 ---
  cmds/Android.bp    | 12 ++++++++++++
@@ -58,5 +58,5 @@ index 0000000..9943557
 +
 +}
 -- 
-2.34.1
+2.48.1
 

@@ -1,7 +1,7 @@
-From a29b1a579f016b1256597a47152d9ee544231e99 Mon Sep 17 00:00:00 2001
+From 1b83ab433ac55b149f17430b2008e2038a9fedb2 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 30 Nov 2024 07:43:57 -0500
-Subject: [PATCH 3/4] Rework aidl call, add aidl call to agold hal
+Subject: [PATCH 3/7] Rework aidl call, add aidl call to agold hal
 
 ---
  sepolicy/treble_app.te | 5 +++--
@@ -22,5 +22,5 @@ index 6a6bdb1..4bed5f1 100644
 +type hal_aidl_agolddaemon_default, domain;
 +binder_call(system_app, hal_aidl_agolddaemon_default);
 -- 
-2.34.1
+2.48.1
 
