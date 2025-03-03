@@ -71,6 +71,7 @@ initRepo() {
   <project name=\"platform/prebuilts/vndk/v28\" path=\"prebuilts/vndk/v28\" remote=\"aosp\" revision=\"204f1bad00aaf480ba33233f7b8c2ddaa03155dd\" clone-depth=\"1\" />
 
   <project path=\"packages/apps/QcRilAm\" name=\"AndyCGYan/android_packages_apps_QcRilAm\" remote=\"github\" revision=\"master\" />
+  <project path=\"packages/apps/MikuUILyricsStubDummy\" name=\"platform_packages_apps_MikuUILyricsStubDummy\" remote="miku\" revision="master\" />
 </manifest>" > .repo/local_manifests/miku-treble.xml
     fi
 }

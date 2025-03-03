@@ -1,0 +1,39 @@
+From 84bce9b11af0180462558ac21f4349cc3322ca24 Mon Sep 17 00:00:00 2001
+From: AmeChanRain <downloadbot007@gmail.com>
+Date: Wed, 4 Dec 2024 11:50:00 +0800
+Subject: [PATCH] miku: Build Miku UI Lyrics Stub Dummy
+
+Change-Id: I1cb8167caf0954f098704f15a93e1e7ea550a099
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ build/product/miku_product.mk     | 1 +
+ build/product/miku_product_tab.mk | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/build/product/miku_product.mk b/build/product/miku_product.mk
+index 5602a03..29e9429 100644
+--- a/build/product/miku_product.mk
++++ b/build/product/miku_product.mk
+@@ -40,6 +40,7 @@ PRODUCT_PACKAGES += \
+     LiveWallpapersPicker \
+     messaging \
+     MUBB \
++    MULS_Dummy \
+     PartnerBookmarksProvider \
+     QuickAccessWallet \
+     Stk \
+diff --git a/build/product/miku_product_tab.mk b/build/product/miku_product_tab.mk
+index 24f8234..19f7785 100644
+--- a/build/product/miku_product_tab.mk
++++ b/build/product/miku_product_tab.mk
+@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
+     Gboard \
+     LiveWallpapersPicker \
+     MUBB \
++    MULS_Dummy \
+     PartnerBookmarksProvider \
+     ThemePicker \
+     ThemesStub
+-- 
+2.48.1
+

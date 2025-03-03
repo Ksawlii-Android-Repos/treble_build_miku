@@ -1,0 +1,24 @@
+From 237434850f2d8fd2061e6c69c460cdf571dd4d4a Mon Sep 17 00:00:00 2001
+From: AmeChanRain <downloadbot007@gmail.com>
+Date: Tue, 19 Nov 2024 15:11:02 +0800
+Subject: [PATCH 2/2] base: Add Miku UI lyric stub to sharedUid allowlist
+
+Change-Id: I17d00c1a44559a519171dd74ec6f689940172216
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ data/etc/package-shareduid-allowlist.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/etc/package-shareduid-allowlist.xml b/data/etc/package-shareduid-allowlist.xml
+index 2401d4a26e68..4e7a58b43a42 100644
+--- a/data/etc/package-shareduid-allowlist.xml
++++ b/data/etc/package-shareduid-allowlist.xml
+@@ -32,4 +32,5 @@ Example usage
+ 
+ <config>
+     <allow-package-shareduid package="android.test.settings" shareduid="android.uid.system" />
++    <allow-package-shareduid package="com.miku.lyricsstub" shareduid="android.uid.system" />
+ </config>
+-- 
+2.48.1
+
