@@ -1,0 +1,27 @@
+From 9dccff2fff08b1506b358e4e4e43e67d7fdbcc40 Mon Sep 17 00:00:00 2001
+From: Ksawlii <ksawery.blaszczak@proton.me>
+Date: Mon, 3 Mar 2025 12:25:10 +0000
+Subject: [PATCH 2/2] Show MIKU_MASTER in lunch
+
+Change-Id: I9d4984da365934527e13d02c6b6ef0b8b0517d06
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ core/envsetup.mk | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/core/envsetup.mk b/core/envsetup.mk
+index 30a6c06..71a4ba6 100644
+--- a/core/envsetup.mk
++++ b/core/envsetup.mk
+@@ -97,6 +97,8 @@ ifeq ($(TARGET_PRODUCT),)
+ TARGET_PRODUCT := aosp_arm
+ endif
+ 
++# Miku Master
++MIKU_MASTER := $(MIKU_MASTER)
+ 
+ # the variant -- the set of files that are included for a build
+ ifeq ($(strip $(TARGET_BUILD_VARIANT)),)
+-- 
+2.48.1
+

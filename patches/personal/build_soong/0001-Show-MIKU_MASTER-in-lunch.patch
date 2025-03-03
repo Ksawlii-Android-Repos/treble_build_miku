@@ -1,0 +1,36 @@
+From e6d1a0210e860a2e15bac50c967ca626cd9cbe60 Mon Sep 17 00:00:00 2001
+From: Ksawlii <ksawery.blaszczak@proton.me>
+Date: Mon, 3 Mar 2025 12:29:22 +0000
+Subject: [PATCH] Show MIKU_MASTER in lunch
+
+Change-Id: Ia7673742e4eabac28f5829d30af14f5c2a54f69c
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ ui/build/dumpvars.go | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/ui/build/dumpvars.go b/ui/build/dumpvars.go
+index e17bd54..c98e945 100644
+--- a/ui/build/dumpvars.go
++++ b/ui/build/dumpvars.go
+@@ -150,6 +150,7 @@ var BannerVars = []string{
+ 	"PRODUCT_INCLUDE_TAGS",
+ 	"PRODUCT_SOURCE_ROOT_DIRS",
+ 	"TARGET_PRODUCT",
++  "MIKU_MASTER",
+ 	"TARGET_BUILD_VARIANT",
+ 	"TARGET_BUILD_APPS",
+ 	"TARGET_BUILD_UNBUNDLED",
+@@ -187,7 +188,8 @@ func runMakeProductConfig(ctx Context, config Config) {
+ 		// So that we can use the correct TARGET_PRODUCT if it's been
+ 		// modified by a buildspec.mk
+ 		"TARGET_PRODUCT",
+-		"TARGET_BUILD_VARIANT",
++		"MIKU_MASTER",
++    "TARGET_BUILD_VARIANT",
+ 		"TARGET_BUILD_APPS",
+ 		"TARGET_BUILD_UNBUNDLED",
+ 
+-- 
+2.48.1
+
