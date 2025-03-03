@@ -1,7 +1,7 @@
-From 8082abf29b3afdcc8b100538d0c629380460dd5d Mon Sep 17 00:00:00 2001
+From 9b299510fceea150b0dc72c3466e2ad7872421df Mon Sep 17 00:00:00 2001
 From: AmeChanRain <downloadbot007@gmail.com>
 Date: Sun, 5 Jan 2025 19:09:04 +0800
-Subject: [PATCH 3/4] package-shareduid-allowlist: Add miku audio forward to
+Subject: [PATCH 3/5] package-shareduid-allowlist: Add miku audio forward to
  whitelist
 
 Change-Id: I237b7078a941af003fd9e6c5112813f84097eb9d

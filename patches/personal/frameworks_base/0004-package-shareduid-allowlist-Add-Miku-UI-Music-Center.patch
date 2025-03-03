@@ -1,7 +1,7 @@
-From 9f92148eab52a986a4c674f3dc3ce3b1a8041188 Mon Sep 17 00:00:00 2001
+From 3f0a25061a2c527890baf3902e4ecab966eb59e3 Mon Sep 17 00:00:00 2001
 From: AmeChanRain <downloadbot007@gmail.com>
 Date: Sun, 5 Jan 2025 19:15:35 +0800
-Subject: [PATCH 4/4] package-shareduid-allowlist: Add Miku UI Music Center to
+Subject: [PATCH 4/5] package-shareduid-allowlist: Add Miku UI Music Center to
  whitelist
 
 Change-Id: I857c28e4965c67a8b50fbd4b55a287c5ddde52ac
