@@ -1,0 +1,49 @@
+From 34fc8c014b9618a21df2423cd5ef9eabdabc5a33 Mon Sep 17 00:00:00 2001
+From: Ksawlii <ksawery.blaszczak@proton.me>
+Date: Mon, 3 Mar 2025 11:53:50 +0000
+Subject: [PATCH 2/2] miku: Build Miku UI Music Center if it exists
+
+Change-Id: Id0944c4b8ed7fb7a8ebff80661fbb5e49db8f380
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ build/product/miku_product.mk     | 6 ++++++
+ build/product/miku_product_tab.mk | 6 ++++++
+ 2 files changed, 12 insertions(+)
+
+diff --git a/build/product/miku_product.mk b/build/product/miku_product.mk
+index 29e9429..ed81cf2 100644
+--- a/build/product/miku_product.mk
++++ b/build/product/miku_product.mk
+@@ -47,6 +47,12 @@ PRODUCT_PACKAGES += \
+     ThemePicker \
+     ThemesStub
+ 
++# Miku UI Music Center 
++ifneq ($(wildcard packages/apps/MikuUIMusicCenter),)
++PRODUCT_PACKAGES += \
++		MikuUIMusicCenter
++endif
++
+ # Lineage AudioFX
+ ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
+ PRODUCT_PACKAGES += \
+diff --git a/build/product/miku_product_tab.mk b/build/product/miku_product_tab.mk
+index 19f7785..12631fe 100644
+--- a/build/product/miku_product_tab.mk
++++ b/build/product/miku_product_tab.mk
+@@ -48,6 +48,12 @@ PRODUCT_PACKAGES += \
+     ThemePicker \
+     ThemesStub
+ 
++# Miku UI Music Center 
++ifneq ($(wildcard packages/apps/MikuUIMusicCenter),)
++PRODUCT_PACKAGES += \
++		MikuUIMusicCenter
++endif
++
+ # Lineage AudioFX
+ ifneq ($(TARGET_EXCLUDES_AUDIOFX),true)
+ PRODUCT_PACKAGES += \
+-- 
+2.48.1
+

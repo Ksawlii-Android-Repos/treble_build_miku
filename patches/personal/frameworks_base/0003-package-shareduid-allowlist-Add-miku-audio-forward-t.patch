@@ -1,0 +1,26 @@
+From 8082abf29b3afdcc8b100538d0c629380460dd5d Mon Sep 17 00:00:00 2001
+From: AmeChanRain <downloadbot007@gmail.com>
+Date: Sun, 5 Jan 2025 19:09:04 +0800
+Subject: [PATCH 3/4] package-shareduid-allowlist: Add miku audio forward to
+ whitelist
+
+Change-Id: I237b7078a941af003fd9e6c5112813f84097eb9d
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ data/etc/package-shareduid-allowlist.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/etc/package-shareduid-allowlist.xml b/data/etc/package-shareduid-allowlist.xml
+index 4e7a58b43a42..7bdcfabd8838 100644
+--- a/data/etc/package-shareduid-allowlist.xml
++++ b/data/etc/package-shareduid-allowlist.xml
+@@ -32,5 +32,6 @@ Example usage
+ 
+ <config>
+     <allow-package-shareduid package="android.test.settings" shareduid="android.uid.system" />
++    <allow-package-shareduid package="com.miku.audioforward" shareduid="android.uid.systemui" />
+     <allow-package-shareduid package="com.miku.lyricsstub" shareduid="android.uid.system" />
+ </config>
+-- 
+2.48.1
+

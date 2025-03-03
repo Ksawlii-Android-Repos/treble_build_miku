@@ -1,0 +1,25 @@
+From 9f92148eab52a986a4c674f3dc3ce3b1a8041188 Mon Sep 17 00:00:00 2001
+From: AmeChanRain <downloadbot007@gmail.com>
+Date: Sun, 5 Jan 2025 19:15:35 +0800
+Subject: [PATCH 4/4] package-shareduid-allowlist: Add Miku UI Music Center to
+ whitelist
+
+Change-Id: I857c28e4965c67a8b50fbd4b55a287c5ddde52ac
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ data/etc/package-shareduid-allowlist.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/data/etc/package-shareduid-allowlist.xml b/data/etc/package-shareduid-allowlist.xml
+index 7bdcfabd8838..d98b353cc115 100644
+--- a/data/etc/package-shareduid-allowlist.xml
++++ b/data/etc/package-shareduid-allowlist.xml
+@@ -34,4 +34,5 @@ Example usage
+     <allow-package-shareduid package="android.test.settings" shareduid="android.uid.system" />
+     <allow-package-shareduid package="com.miku.audioforward" shareduid="android.uid.systemui" />
+     <allow-package-shareduid package="com.miku.lyricsstub" shareduid="android.uid.system" />
++    <allow-package-shareduid package="com.miku.musiccenter" shareduid="android.uid.systemui" />
+ </config>
+-- 
+2.48.1
+

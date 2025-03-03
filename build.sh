@@ -72,6 +72,7 @@ initRepo() {
 
   <project path=\"packages/apps/QcRilAm\" name=\"AndyCGYan/android_packages_apps_QcRilAm\" remote=\"github\" revision=\"master\" />
   <project path=\"packages/apps/MikuUILyricsStubDummy\" name=\"platform_packages_apps_MikuUILyricsStubDummy\" remote="miku\" revision="master\" />
+  <project path=\"packages/apps/MikuUIMusicCenter\" name=\"platform_packages_apps_MikuUIMusicCenter\" remote="miku\" revision="master\" />
 </manifest>" > .repo/local_manifests/miku-treble.xml
     fi
 }

@@ -1,7 +1,7 @@
 From 237434850f2d8fd2061e6c69c460cdf571dd4d4a Mon Sep 17 00:00:00 2001
 From: AmeChanRain <downloadbot007@gmail.com>
 Date: Tue, 19 Nov 2024 15:11:02 +0800
-Subject: [PATCH 2/2] base: Add Miku UI lyric stub to sharedUid allowlist
+Subject: [PATCH 2/4] base: Add Miku UI lyric stub to sharedUid allowlist
 
 Change-Id: I17d00c1a44559a519171dd74ec6f689940172216
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
