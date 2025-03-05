@@ -1,0 +1,514 @@
+From 3c2b5a7f1d517f540c67dfc76eb5d079f269614c Mon Sep 17 00:00:00 2001
+From: Ksawlii <ksawery.blaszczak@proton.me>
+Date: Wed, 5 Mar 2025 20:06:01 +0000
+Subject: [PATCH] Add resources for Mi 10T Pro 5G
+
+Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
+---
+ Xiaomi/Mi10TPro5G-SystemUI/Android.mk         |   8 +
+ .../Mi10TPro5G-SystemUI/AndroidManifest.xml   |  10 +
+ .../Mi10TPro5G-SystemUI/res/values/config.xml |  11 +
+ Xiaomi/Mi10TPro5G/Android.mk                  |   8 +
+ Xiaomi/Mi10TPro5G/AndroidManifest.xml         |  10 +
+ Xiaomi/Mi10TPro5G/res/values/config.xml       | 214 ++++++++++++++++++
+ Xiaomi/Mi10TPro5G/res/xml/power_profile.xml   | 185 +++++++++++++++
+ 7 files changed, 446 insertions(+)
+ create mode 100644 Xiaomi/Mi10TPro5G-SystemUI/Android.mk
+ create mode 100644 Xiaomi/Mi10TPro5G-SystemUI/AndroidManifest.xml
+ create mode 100644 Xiaomi/Mi10TPro5G-SystemUI/res/values/config.xml
+ create mode 100644 Xiaomi/Mi10TPro5G/Android.mk
+ create mode 100644 Xiaomi/Mi10TPro5G/AndroidManifest.xml
+ create mode 100644 Xiaomi/Mi10TPro5G/res/values/config.xml
+ create mode 100644 Xiaomi/Mi10TPro5G/res/xml/power_profile.xml
+
+diff --git a/Xiaomi/Mi10TPro5G-SystemUI/Android.mk b/Xiaomi/Mi10TPro5G-SystemUI/Android.mk
+new file mode 100644
+index 0000000..f6c7fed
+--- /dev/null
++++ b/Xiaomi/Mi10TPro5G-SystemUI/Android.mk
+@@ -0,0 +1,8 @@
++LOCAL_PATH := $(call my-dir)
++include $(CLEAR_VARS)
++LOCAL_MODULE_TAGS := optional
++LOCAL_PACKAGE_NAME := treble-overlay-xiaomi-mi10tpro5g-systemui
++LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/overlay
++LOCAL_IS_RUNTIME_RESOURCE_OVERLAY := true
++LOCAL_PRIVATE_PLATFORM_APIS := true
++include $(BUILD_PACKAGE)
+diff --git a/Xiaomi/Mi10TPro5G-SystemUI/AndroidManifest.xml b/Xiaomi/Mi10TPro5G-SystemUI/AndroidManifest.xml
+new file mode 100644
+index 0000000..8fb5bfa
+--- /dev/null
++++ b/Xiaomi/Mi10TPro5G-SystemUI/AndroidManifest.xml
+@@ -0,0 +1,10 @@
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++    package="me.phh.treble.overlay.xiaomi.mi10tpro5g.systemui"
++    android:versionCode="1"
++    android:versionName="1.0">
++    <overlay android:targetPackage="com.android.systemui"
++        android:requiredSystemPropertyName="ro.vendor.build.fingerprint"
++        android:requiredSystemPropertyValue="+*iaomi/apollo*"
++        android:priority="2384"
++        android:isStatic="true" />
++</manifest>
+diff --git a/Xiaomi/Mi10TPro5G-SystemUI/res/values/config.xml b/Xiaomi/Mi10TPro5G-SystemUI/res/values/config.xml
+new file mode 100644
+index 0000000..56600dd
+--- /dev/null
++++ b/Xiaomi/Mi10TPro5G-SystemUI/res/values/config.xml
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <!-- Doze: does this device support STATE_DOZE?  -->
++    <bool name="doze_display_state_supported">true</bool>
++
++    <!-- Doze: does this device support STATE_DOZE_SUSPEND?  -->
++    <bool name="doze_suspend_display_state_supported">false</bool>
++
++    <!-- Preferred max refresh rate at keyguard, if supported by the display. -->
++    <integer name="config_keyguardMaxRefreshRate">60</integer>
++</resources>
+diff --git a/Xiaomi/Mi10TPro5G/Android.mk b/Xiaomi/Mi10TPro5G/Android.mk
+new file mode 100644
+index 0000000..6eba6d9
+--- /dev/null
++++ b/Xiaomi/Mi10TPro5G/Android.mk
+@@ -0,0 +1,8 @@
++LOCAL_PATH := $(call my-dir)
++include $(CLEAR_VARS)
++LOCAL_MODULE_TAGS := optional
++LOCAL_PACKAGE_NAME := treble-overlay-xiaomi-mi10tpro5g
++LOCAL_MODULE_PATH := $(TARGET_OUT_PRODUCT)/overlay
++LOCAL_IS_RUNTIME_RESOURCE_OVERLAY := true
++LOCAL_PRIVATE_PLATFORM_APIS := true
++include $(BUILD_PACKAGE)
+diff --git a/Xiaomi/Mi10TPro5G/AndroidManifest.xml b/Xiaomi/Mi10TPro5G/AndroidManifest.xml
+new file mode 100644
+index 0000000..b193700
+--- /dev/null
++++ b/Xiaomi/Mi10TPro5G/AndroidManifest.xml
+@@ -0,0 +1,10 @@
++<manifest xmlns:android="http://schemas.android.com/apk/res/android"
++        package="me.phh.treble.overlay.xiaomi.mi10tpro5g"
++        android:versionCode="1"
++        android:versionName="1.0">
++        <overlay android:targetPackage="android"
++                android:requiredSystemPropertyName="ro.vendor.build.fingerprint"
++                android:requiredSystemPropertyValue="+*iaomi/apollo*"
++		android:priority="2384"
++		android:isStatic="true" />
++</manifest>
+diff --git a/Xiaomi/Mi10TPro5G/res/values/config.xml b/Xiaomi/Mi10TPro5G/res/values/config.xml
+new file mode 100644
+index 0000000..83e4856
+--- /dev/null
++++ b/Xiaomi/Mi10TPro5G/res/values/config.xml
+@@ -0,0 +1,214 @@
++<?xml version="1.0" encoding="utf-8"?>
++<resources>
++    <string name="config_ims_package">org.codeaurora.ims</string>
++
++    <bool name="config_device_volte_available">true</bool>
++    <bool name="config_device_vt_available">true</bool>
++    <bool name="config_device_wfc_ims_available">true</bool>
++    <bool name="config_carrier_volte_available">true</bool>
++    <bool name="config_carrier_wfc_ims_available">true</bool>
++    <bool name="config_hotswapCapable">true</bool>
++    <bool name="skip_restoring_network_selection">true</bool>
++
++    <bool name="config_showNavigationBar">true</bool>
++    <bool name="config_enableBurnInProtection">true</bool>
++    <bool name="config_dozeAfterScreenOffByDefault">true</bool>
++    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
++    <bool name="config_automatic_brightness_available">true</bool>
++
++    <integer name="config_screenBrightnessSettingMinimum">2</integer>
++    <integer name="config_screenBrightnessSettingMaximum">255</integer>
++
++    <integer-array name="config_autoBrightnessLevels">
++        <item>1</item>
++        <item>2</item>
++        <item>4</item>
++        <item>6</item>
++        <item>8</item>
++        <item>10</item>
++        <item>15</item>
++        <item>20</item>
++        <item>25</item>
++        <item>30</item>
++        <item>35</item>
++        <item>40</item>
++        <item>45</item>
++        <item>50</item>
++        <item>55</item>
++        <item>60</item>
++        <item>65</item>
++        <item>70</item>
++        <item>75</item>
++        <item>80</item>
++        <item>85</item>
++        <item>90</item>
++        <item>95</item>
++        <item>100</item>
++        <item>120</item>
++        <item>140</item>
++        <item>160</item>
++        <item>180</item>
++        <item>200</item>
++        <item>220</item>
++        <item>240</item>
++        <item>260</item>
++        <item>280</item>
++        <item>300</item>
++        <item>320</item>
++        <item>340</item>
++        <item>360</item>
++        <item>380</item>
++        <item>400</item>
++        <item>420</item>
++        <item>440</item>
++        <item>460</item>
++        <item>480</item>
++        <item>500</item>
++        <item>700</item>
++        <item>900</item>
++        <item>1100</item>
++        <item>1300</item>
++        <item>1500</item>
++        <item>1700</item>
++        <item>1900</item>
++        <item>2200</item>
++        <item>2500</item>
++        <item>3000</item>
++        <item>3500</item>
++        <item>4000</item>
++        <item>4500</item>
++    </integer-array>
++    <array name="config_autoBrightnessDisplayValuesNits">
++        <item>5</item>
++        <item>5</item>
++        <item>5</item>
++        <item>17</item>
++        <item>24</item>
++        <item>31</item>
++        <item>34</item>
++        <item>46</item>
++        <item>59</item>
++        <item>76</item>
++        <item>81</item>
++        <item>82</item>
++        <item>82</item>
++        <item>82</item>
++        <item>83</item>
++        <item>83</item>
++        <item>83</item>
++        <item>84</item>
++        <item>84</item>
++        <item>85</item>
++        <item>85</item>
++        <item>85</item>
++        <item>85</item>
++        <item>86</item>
++        <item>86</item>
++        <item>87</item>
++        <item>89</item>
++        <item>90</item>
++        <item>91</item>
++        <item>93</item>
++        <item>94</item>
++        <item>96</item>
++        <item>97</item>
++        <item>99</item>
++        <item>100</item>
++        <item>101</item>
++        <item>104</item>
++        <item>105</item>
++        <item>106</item>
++        <item>108</item>
++        <item>109</item>
++        <item>111</item>
++        <item>112</item>
++        <item>114</item>
++        <item>116</item>
++        <item>137</item>
++        <item>157</item>
++        <item>180</item>
++        <item>205</item>
++        <item>226</item>
++        <item>257</item>
++        <item>280</item>
++        <item>295</item>
++        <item>369</item>
++        <item>434</item>
++        <item>495</item>
++        <item>495</item>
++        <item>495</item>
++    </array>
++    <array name="config_screenBrightnessNits">
++        <item>2.0</item>
++        <item>450.0</item>
++    </array>
++    <integer-array name="config_screenBrightnessBacklight">
++        <item>1</item>
++        <item>255</item>
++    </integer-array>
++    <integer-array name="config_dynamicHysteresisDarkLevels">
++        <item>200</item>
++        <item>200</item>
++        <item>200</item>
++        <item>200</item>
++        <item>200</item>
++        <item>200</item>
++        <item>200</item>
++        <item>200</item>
++        <item>300</item>
++        <item>400</item>
++        <item>400</item>
++        <item>400</item>
++        <item>400</item>
++        <item>400</item>
++        <item>400</item>
++        <item>500</item>
++        <item>500</item>
++    </integer-array>
++    <integer-array name="config_dynamicHysteresisLuxLevels">
++        <item>1</item>
++        <item>4</item>
++        <item>12</item>
++        <item>20</item>
++        <item>40</item>
++        <item>65</item>
++        <item>95</item>
++        <item>140</item>
++        <item>200</item>
++        <item>350</item>
++        <item>650</item>
++        <item>1300</item>
++        <item>2000</item>
++        <item>3300</item>
++        <item>6000</item>
++        <item>10000</item>
++    </integer-array>
++    <integer name="config_screenBrightnessDim">6</integer>
++    <integer name="config_screenBrightnessSettingDefault">184</integer>
++    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
++    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
++    <fraction name="config_autoBrightnessAdjustmentMaxGamma">300%</fraction>
++    <integer name="config_lightSensorWarmupTime">200</integer>
++    <string name="config_mainBuiltInDisplayCutout">
++	M 60,60
++	a 30,30 0 1 0 60,0
++	a 30,30 0 1 0 -60,0
++	Z
++	@left
++    </string>
++    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
++	M 0.0,0.0
++	h 145
++	v 117
++	h -145
++	Z
++	@left
++    </string>
++    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
++    <bool name="config_physicalDisplayCutout">true</bool>
++    <integer name="config_defaultRefreshRate">0</integer>
++    <integer name="config_defaultPeakRefreshRate">144</integer>
++    <bool name="config_intrusiveNotificationLed">true</bool>
++    <bool name="config_hasNotificationLed">true</bool>
++
++</resources>
+diff --git a/Xiaomi/Mi10TPro5G/res/xml/power_profile.xml b/Xiaomi/Mi10TPro5G/res/xml/power_profile.xml
+new file mode 100644
+index 0000000..eb82753
+--- /dev/null
++++ b/Xiaomi/Mi10TPro5G/res/xml/power_profile.xml
+@@ -0,0 +1,185 @@
++<?xml version="1.0" encoding="utf-8"?>
++<device name="Android">
++    <item name="none">0</item>
++    <item name="screen.on.display0">62.66</item>
++    <item name="screen.full.display0">503.67</item>
++    <item name="bluetooth.active">17.85</item>
++    <item name="bluetooth.on">1.35</item>
++    <item name="wifi.on">0.96</item>
++    <item name="wifi.active">275.28</item>
++    <item name="wifi.scan">39.57</item>
++    <item name="audio">24.51</item>
++    <item name="video">60.2</item>
++    <item name="camera.flashlight">180.22</item>
++    <item name="camera.avg">960.02</item>
++    <item name="gps.on">114.51</item>
++    <item name="radio.active">226.02</item>
++    <item name="radio.scanning">98.46</item>
++    <array name="radio.on">
++        <value>1.23</value>
++        <value>1.23</value>
++    </array>
++    <array name="cpu.clusters.cores">
++        <value>4</value>
++        <value>3</value>
++        <value>1</value>
++    </array>
++    <array name="cpu.core_speeds.cluster0">
++        <value>300000</value>
++        <value>403200</value>
++        <value>518400</value>
++        <value>614400</value>
++        <value>691200</value>
++        <value>787200</value>
++        <value>883200</value>
++        <value>979200</value>
++        <value>1075200</value>
++        <value>1171200</value>
++        <value>1248000</value>
++        <value>1344000</value>
++        <value>1420800</value>
++        <value>1516800</value>
++        <value>1612800</value>
++        <value>1708800</value>
++        <value>1804800</value>
++    </array>
++    <array name="cpu.core_power.cluster0">
++        <value>51.64</value>
++        <value>53.58</value>
++        <value>55.51</value>
++        <value>56.63</value>
++        <value>57.26</value>
++        <value>58.99</value>
++        <value>59.87</value>
++        <value>62.02</value>
++        <value>62.96</value>
++        <value>64.01</value>
++        <value>65.85</value>
++        <value>67.21</value>
++        <value>69.05</value>
++        <value>71.79</value>
++        <value>74.46</value>
++        <value>76.39</value>
++        <value>78.76</value>
++    </array>
++    <array name="cpu.core_speeds.cluster1">
++        <value>710400</value>
++        <value>825600</value>
++        <value>940800</value>
++        <value>1056000</value>
++        <value>1171200</value>
++        <value>1286400</value>
++        <value>1382400</value>
++        <value>1478400</value>
++        <value>1574400</value>
++        <value>1670400</value>
++        <value>1766400</value>
++        <value>1862400</value>
++        <value>1958400</value>
++        <value>2054400</value>
++        <value>2150400</value>
++        <value>2246400</value>
++        <value>2342400</value>
++        <value>2419200</value>
++    </array>
++    <array name="cpu.core_power.cluster1">
++        <value>97.85</value>
++        <value>106.38</value>
++        <value>114.72</value>
++        <value>123.5</value>
++        <value>133.05</value>
++        <value>144.42</value>
++        <value>152.12</value>
++        <value>162.39</value>
++        <value>174.69</value>
++        <value>186.64</value>
++        <value>200.43</value>
++        <value>232.56</value>
++        <value>245.21</value>
++        <value>260.78</value>
++        <value>282.01</value>
++        <value>300.11</value>
++        <value>324.37</value>
++        <value>348.25</value>
++    </array>
++    <array name="cpu.core_speeds.cluster2">
++        <value>844800</value>
++        <value>960000</value>
++        <value>1075200</value>
++        <value>1190400</value>
++        <value>1305600</value>
++        <value>1401600</value>
++        <value>1516800</value>
++        <value>1632000</value>
++        <value>1747200</value>
++        <value>1862400</value>
++        <value>1977600</value>
++        <value>2073600</value>
++        <value>2169600</value>
++        <value>2265600</value>
++        <value>2361600</value>
++        <value>2457600</value>
++        <value>2553600</value>
++        <value>2649600</value>
++        <value>2745600</value>
++        <value>2841600</value>
++    </array>
++    <array name="cpu.core_power.cluster2">
++        <value>105.19</value>
++        <value>113.56</value>
++        <value>122.7</value>
++        <value>132.18</value>
++        <value>142.49</value>
++        <value>150.94</value>
++        <value>168.52</value>
++        <value>182.35</value>
++        <value>199.1</value>
++        <value>216.74</value>
++        <value>244.09</value>
++        <value>262.42</value>
++        <value>309.63</value>
++        <value>321.28</value>
++        <value>332.67</value>
++        <value>353.95</value>
++        <value>379.05</value>
++        <value>409.84</value>
++        <value>443.27</value>
++        <value>493.34</value>
++    </array>
++    <item name="cpu.idle">12.91</item>
++    <item name="cpu.suspend">7.85</item>
++    <array name="memory.bandwidths">
++        <value>22.7</value>
++    </array>
++    <item name="battery.capacity">5000</item>
++    <item name="wifi.controller.idle">0</item>
++    <item name="wifi.controller.rx">0</item>
++    <item name="wifi.controller.tx">0</item>
++    <array name="wifi.controller.tx_levels">
++    </array>
++    <item name="wifi.controller.voltage">0</item>
++    <array name="wifi.batchedscan">
++        <value>.0002</value>
++        <value>.002</value>
++        <value>.02</value>
++        <value>.2</value>
++        <value>2</value>
++    </array>
++    <item name="modem.controller.sleep">0</item>
++    <item name="modem.controller.idle">0</item>
++    <item name="modem.controller.rx">0</item>
++    <array name="modem.controller.tx">
++        <value>0</value>
++        <value>0</value>
++        <value>0</value>
++        <value>0</value>
++        <value>0</value>
++    </array>
++    <item name="modem.controller.voltage">0</item>
++    <array name="gps.signalqualitybased">
++        <value>0</value>
++        <value>0</value>
++    </array>
++    <item name="gps.voltage">0</item>
++    <item name="bluetooth.controller.voltage">3300</item>
++</device>
+-- 
+2.48.1
+
