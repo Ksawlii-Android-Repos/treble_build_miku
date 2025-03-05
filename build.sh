@@ -164,11 +164,7 @@ generateOtaJson() {
     prefix="MikuUI-$VERSION-$VERSION_CODE-"
     suffix="-$BUILD_DATE-UNOFFICIAL.img.gz"
     json="{\"version\": \"$VERSION_CODE\",\"date\": \"$(date +%s -d '-4hours')\",\"variants\": ["
-    if [ "$NO_COMPRESS" = "true" ]; then
-        find $BD -name "*.img" | { 
-    else
-        find $BD -name "*.img.xz" | { 
-    fi
+    find $BD -name "*.img.xz" | {
         while read file; do
             packageVariant=$(echo $(basename $file) | sed -e s/^$prefix// -e s/$suffix$//)
             case $packageVariant in
