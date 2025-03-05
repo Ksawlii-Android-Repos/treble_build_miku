@@ -1,6 +1,6 @@
-From 3c2b5a7f1d517f540c67dfc76eb5d079f269614c Mon Sep 17 00:00:00 2001
+From f91f5b3b25ecbe291c049e3971c30dbb4ca524d8 Mon Sep 17 00:00:00 2001
 From: Ksawlii <ksawery.blaszczak@proton.me>
-Date: Wed, 5 Mar 2025 20:06:01 +0000
+Date: Wed, 5 Mar 2025 22:04:33 +0000
 Subject: [PATCH] Add resources for Mi 10T Pro 5G
 
 Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
@@ -12,7 +12,8 @@ Signed-off-by: Ksawlii <ksawery.blaszczak@proton.me>
  Xiaomi/Mi10TPro5G/AndroidManifest.xml         |  10 +
  Xiaomi/Mi10TPro5G/res/values/config.xml       | 214 ++++++++++++++++++
  Xiaomi/Mi10TPro5G/res/xml/power_profile.xml   | 185 +++++++++++++++
- 7 files changed, 446 insertions(+)
+ overlay.mk                                    |   2 +
+ 8 files changed, 448 insertions(+)
  create mode 100644 Xiaomi/Mi10TPro5G-SystemUI/Android.mk
  create mode 100644 Xiaomi/Mi10TPro5G-SystemUI/AndroidManifest.xml
  create mode 100644 Xiaomi/Mi10TPro5G-SystemUI/res/values/config.xml
@@ -509,6 +510,19 @@ index 0000000..eb82753
 +    <item name="gps.voltage">0</item>
 +    <item name="bluetooth.controller.voltage">3300</item>
 +</device>
+diff --git a/overlay.mk b/overlay.mk
+index 1a8bb00..2979548 100644
+--- a/overlay.mk
++++ b/overlay.mk
+@@ -360,6 +360,8 @@ PRODUCT_PACKAGES += \
+ 	treble-overlay-xiaomi-civi-systemui \
+ 	treble-overlay-xiaomi-civi4pro \
+ 	treble-overlay-xiaomi-civi4pro-systemui \
++	treble-overlay-xiaomi-mi10tpro5g \
++	treble-overlay-xiaomi-mi10tpro5g-systemui \
+ 	treble-overlay-xiaomi-mi11lite5g \
+ 	treble-overlay-xiaomi-mi11lite5g-systemui \
+ 	treble-overlay-xiaomi-mi11tpro \
 -- 
 2.48.1
 
